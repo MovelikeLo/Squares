@@ -4,8 +4,8 @@ let squareCount = parseInt(Math.random()*21)+ 30;
 for (let i = 0; i < squareCount; i++) {
     let square = document.createElement("div");
     square.className = "square";
-    square.style.top = parseInt(Math.random() * 650) + "px";
-    square.style.left = parseInt(Math.random() * 250) + "px";
+    square.style.top = parseInt(Math.random() * 250) + "px";
+    square.style.left = parseInt(Math.random() * 650) + "px";
     square.style.backgroundColor = getRandomColor();
     squareArea.appendChild(square);
 }
@@ -18,4 +18,18 @@ function getRandomColor() {
     }
     return color;
 
+}
+
+
+
+
+function changeColors() {
+    let squareColors = [];
+    let squares = document.querySelectorAll(".square");
+    squares.forEach(square => {
+        squareColors.push(square.style.backgroundColor);
+    });
+    squares.forEach(square => {
+        square.style.backgroundColor = getRandomColor();
+    });
 }
