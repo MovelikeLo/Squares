@@ -3,6 +3,7 @@ let squareCount = parseInt(Math.random()*21)+ 30;
 let zIndex = 1000;
 for (let i = 0; i < squareCount; i++) {
     addSquare();
+    randomizeSquareSize();
 }
 
 function getRandomColor() {
@@ -39,4 +40,12 @@ function changeZIndex() {
     zIndex++;
     this.style.zIndex = zIndex;
     
+}
+function randomizeSquareSize() {
+    let squares = document.querySelectorAll(".square");
+    squares.forEach(square => {
+        let size = parseInt(Math.random() * 55) + 7;
+        square.style.width = size + "px";
+        square.style.height = size + "px";
+    });
 }
